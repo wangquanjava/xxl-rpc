@@ -23,7 +23,7 @@ public class ZkServiceRegistry {
 	// ------------------------------ zookeeper client ------------------------------
 	private static ZooKeeper zooKeeper;
 	private static ReentrantLock INSTANCE_INIT_LOCK = new ReentrantLock(true);
-
+	// get zk client
 	private static ZooKeeper getInstance(){
 		if (zooKeeper==null) {
 			try {

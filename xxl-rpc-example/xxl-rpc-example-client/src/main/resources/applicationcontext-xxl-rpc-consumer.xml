@@ -15,6 +15,9 @@
 	-->
 	<!-- netty-rpc (需要服务端通讯模式: NETTY/MINA) -->
 	<bean id="demoService" class="com.xxl.rpc.netcom.NetComClientProxy">
+		<property name="serverAddress" value="" />
+		<property name="netcom" value="NETTY" />
+		<property name="serializer" value="HESSIAN" />
 		<property name="iface" value="com.xxl.rpc.example.api.IDemoService" />
 	</bean>
 	
