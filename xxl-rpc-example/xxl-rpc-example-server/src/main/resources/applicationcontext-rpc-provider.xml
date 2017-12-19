@@ -20,9 +20,10 @@
 	-->
     <bean class="com.xxl.rpc.netcom.NetComServerFactory">
     	<property name="port" value="7080" />
+    	<property name="http_port" value="7072" />
     	<property name="netcom" value="NETTY" />
     	<property name="serializer" value="HESSIAN" />
-    	<property name="zookeeper_switch" value="false" />
+    	<property name="zookeeper_switch" value="true" />
     </bean>
 
 </beans>
