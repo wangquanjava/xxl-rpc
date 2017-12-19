@@ -29,7 +29,8 @@ public class NetComClientProxy implements FactoryBean<Object>, InitializingBean 
     private NetComEnum netcom = NetComEnum.NETTY;
     private Serializer serializer = Serializer.SerializeEnum.HESSIAN.serializer;
     private Class<?> iface;
-    private long timeoutMillis = 5000;
+    // TODO 这里暂时把超时时间设置为5分钟
+    private long timeoutMillis = 5 * 60 * 1000;
 
     public NetComClientProxy() {
     }
