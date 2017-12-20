@@ -43,6 +43,7 @@ public class RpcCallbackFuture {
 		if (!isDone) {
 			synchronized (lock) {
 				try {
+					// 如果还未完成，wait当前线程，等待response唤醒，或者超时
 					lock.wait(timeoutMillis);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -52,6 +53,7 @@ public class RpcCallbackFuture {
 		}
 		
 		if (!isDone) {
+			// 代表是超时
 			throw new TimeoutException(MessageFormat.format(">>>>>>>>>>>> xxl-rpc, netty request timeout at:{0}, request:{1}", System.currentTimeMillis(), request.toString()));
 		}
 		return response;
