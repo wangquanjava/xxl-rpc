@@ -23,7 +23,7 @@ public class IndexController {
 
 		List<String> list = new ArrayList<String>();
 		list.add(demoService.sayHi(userName).toString());
-
+		System.out.println(">>>>>>>>>>>>>>>>>>server响应了<<<<<<<<<<<<<<<<<<<<<<<<<<");
 		return list;
 	}
 	
