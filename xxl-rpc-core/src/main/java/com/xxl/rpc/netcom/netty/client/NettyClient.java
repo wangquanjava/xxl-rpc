@@ -39,6 +39,7 @@ public class NettyClient extends IClient {
 			throw e;
 		} finally{
 			RpcCallbackFuture.futurePool.remove(request.getRequestId());
+			// 把对象进行返回
 			clientPool.returnObject(clientPoolProxy);
 		}
 		
